@@ -10,12 +10,12 @@
 </head>
 <body>
 	<div class="container">
-	<div id="app">
-<div class="info">
-	<span class="mx-1 badge badge-info">نام: مجتبی امین زاده</span>
-	<span class="mx-1 badge badge-info">شماره دانش آموزی: ۰۱۲۳۴۵۶۷۸۹</span>
-	<span class="mx-1 badge badge-info">کلاس: پنجم الف</span>
-</div>	
+		<div id="app">
+			<div class="info">
+				<span class="mx-1 badge badge-info">نام: مجتبی امین زاده</span>
+				<span class="mx-1 badge badge-info">شماره دانش آموزی: ۰۱۲۳۴۵۶۷۸۹</span>
+				<span class="mx-1 badge badge-info">کلاس: پنجم الف</span>
+			</div>	
 		<table class="table table-striped">
 		  <thead class="thead-dark">
 		    <tr>
@@ -27,26 +27,38 @@
 		  </thead>
 
 		  <tbody>
-		 
 		    <tr v-for="dars, index in karname">
 		      <th scope="row">{{index+1}}</th>
 		      <td>{{dars.dars}}</td>
 		      <td>{{dars.nomredigit}}</td>
 		      <td>{{dars.nomrealpha}}</td>
 		    </tr>
-
 		  </tbody>
+
 		</table>
 		<hr>
-<div class="mb-5">
-		<input type="text" placeholder="نام درس" v-model="darsName">
-		<input type="text" placeholder="نمره به عدد انگلیسی" v-model="darsDigit">
-		<input type="text" placeholder="نمره به حروف" v-model="darsAlpha">
-		<button class="btn btn-outline-info" @click="insertData">ثبت</button>
-		<span class="badge display-1" :class="pga >= 10 ? 'badge-success' : 'badge-danger'">معدل: {{pga}}</span>
+		<div class="mb-5">
+			<input type="text" placeholder="نام درس" v-model="darsName" required>
+			<input type="text" placeholder="نمره به عدد انگلیسی" v-model="darsDigit" required>
+			<input type="text" placeholder="نمره به حروف" v-model="darsAlpha" required>
+			<button type="submit" class="btn btn-outline-info" @click="insertData">ثبت</button>
+			<span class="badge display-1" :class="pga >= 10 ? 'badge-success' : 'badge-danger'">معدل: {{pga}}</span>
+		</div>
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col text-center mb-5">
+				<small>یک برنامه ساده برای تولید کارنامه و محاسبه معدل به صورت لحظه ای</small><br>
+				<small>نوشته شده با Vuejs</small><br>
+				<small><a href="http://www.pyproject.ir" target="_blank">Pyproject.ir</a></small>
+			</div>
+			<div class="col-1"></div>
+		</div>
+
+		<footer class="mt-5">Author: Mojtaba Aminzadeh</footer>
+
+	</div>
 </div>
-	</div>
-	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="vue.js" type="text/javascript"></script>
