@@ -7,3 +7,5 @@ calculate GPA real time.
 Delete Button
 
 Edit Button
+
+Add To DataBase
