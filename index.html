@@ -34,22 +34,17 @@
 		      <td>{{dars.nomredigit}}</td>
 		      <td>{{dars.nomrealpha}}</td>
 		    </tr>
-		    
-		    <tr class="bg-success">  
-		      <td>معدل</td>
-		      <td>{{pga}}</td>
-		      <td>بیست</td>
-		      <td>قبول</td>
-		    </tr>
 
 		  </tbody>
 		</table>
-
-		<input type="text"  placeholder="نام درس" v-model="darsName">
-		<input type="text"  placeholder="نمره به عدد" v-model="darsDigit">
-		<input type="text"  placeholder="نمره به حروف" v-model="darsAlpha">
+		<hr>
+<div class="mb-5">
+		<input type="text" placeholder="نام درس" v-model="darsName">
+		<input type="text" placeholder="نمره به عدد انگلیسی" v-model="darsDigit">
+		<input type="text" placeholder="نمره به حروف" v-model="darsAlpha">
 		<button class="btn btn-outline-info" @click="insertData">ثبت</button>
-
+		<span class="badge display-1" :class="pga >= 10 ? 'badge-success' : 'badge-danger'">معدل: {{pga}}</span>
+</div>
 	</div>
 	</div>
 
