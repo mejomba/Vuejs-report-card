@@ -11,23 +11,23 @@
 <body>
 	<div class="container">
 	<div id="app">
-
+<div class="info">
+	<span class="mx-1 badge badge-info">نام: مجتبی امین زاده</span>
+	<span class="mx-1 badge badge-info">شماره دانش آموزی: ۰۱۲۳۴۵۶۷۸۹</span>
+	<span class="mx-1 badge badge-info">کلاس: پنجم الف</span>
+</div>	
 		<table class="table table-striped">
 		  <thead class="thead-dark">
 		    <tr>
-		      <th scope="col">#</th>
-		      <th scope="col">First</th>
-		      <th scope="col">Last</th>
-		      <th scope="col">Handle</th>
+		      <th scope="col">سطر</th>
+		      <th scope="col">درس</th>
+		      <th scope="col">نمره عدد</th>
+		      <th scope="col">نمره حروف</th>
 		    </tr>
 		  </thead>
+
 		  <tbody>
-		    <tr>
-		      <th scope="row">مشخصات</th>
-		      <td>نام: مجتبی امین زاده</td>
-		      <td>شماره دانش آموزی: ۰۱۲۳۴۵۶۷۸۹</td>
-		      <td>کلاس: پنجم الف</td>
-		    </tr>
+		 
 		    <tr v-for="dars, index in karname">
 		      <th scope="row">{{index+1}}</th>
 		      <td>{{dars.dars}}</td>
@@ -37,17 +37,18 @@
 		    
 		    <tr class="bg-success">  
 		      <td>معدل</td>
-		      <td>20</td>
+		      <td>{{pga}}</td>
 		      <td>بیست</td>
 		      <td>قبول</td>
 		    </tr>
+
 		  </tbody>
 		</table>
 
-		<input type="text" name="dars" placeholder="نام درس" required>
-		<input type="text" name="nomre" placeholder="نمره به عدد" required>
-		<input type="text" name="nomre" placeholder="نمره به حروف" required>
-		<button class="btn btn-outline-info">ثبت</button>
+		<input type="text"  placeholder="نام درس" v-model="darsName">
+		<input type="text"  placeholder="نمره به عدد" v-model="darsDigit">
+		<input type="text"  placeholder="نمره به حروف" v-model="darsAlpha">
+		<button class="btn btn-outline-info" @click="insertData">ثبت</button>
 
 	</div>
 	</div>
